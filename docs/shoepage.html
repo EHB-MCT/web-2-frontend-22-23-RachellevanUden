@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/src/auth.js" defer></script>
+    <script src="/src/main.js"></script>
+    <script type="module" src="/src/script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Fresh Kickz</title>
+</head>
+
+<body>
+    <div class="container-master">
+        <div class="header">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/FreshKickz-logo.svg">
+                </a>
+            </div>
+            <div class="nav">
+                <form class="searchform">
+                    <input type="text" class="form-control" id="inputShoe" placeholder="Find you sneakers here...">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+                <ul>
+                    <li><a href="login.html"><button class="btn log">Login</button></a></li>
+                    <li><a href="register.html"><button class="btn sign">Sign Up</button></a></li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="outer-container">
+            <h1>Air Force 1 Low 'Colour of the Month'</h1>
+
+            <div class="content-container">
+                <div class="container-three">
+                    <time datetime="2014-09-20" class="icon">
+                        <strong>SEP</strong>
+                        <span>20</span>
+                    </time>
+                    <img id="shoe-img-detail" src="/docs/images/2-air-force-1-low-colour-of-the-moth.png" alt="...">
+                </div>
+                <div class="container-four">
+
+                    <!-- Code loaded in from API: Productdetails: shoeName, brand, description, releaseDate, retailPrice, lowestResellPrice
+                    Remove text-decorations-->
+
+                    <ul class="detail-list">
+                        <li>
+                            <h3>Productdetails</h3>
+                        </li>
+                        <li>
+                            <h4>shoeName</h4>
+                        </li>
+                        <li>
+                            <h4>brand</h4>
+                        </li>
+                        <li>
+                            <h4>description</h4>
+                        </li>
+                        <li>
+                            <h4>releaseDate</h4>
+                        </li>
+                        <li>
+                            <h4>retailPrice</h4>
+                        </li>
+                        <li>
+                            <h4>lowestResellPrice</h4>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</body>
+
+</html>
