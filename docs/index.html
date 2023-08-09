@@ -1,60 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="../src/auth.js" defer></script>
+        <script src="../src/main.js" defer type="text/javascript"></script>
+        <script type="module" src="../src/script.js"></script>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <title>Fresh Kickz</title>
+    </head>
 
-    <script src="/src/auth.js" defer></script>
-    <script src="/src/main.js"></script>
-    <script type="module" src="/src/script.js"></script>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Fresh Kickz</title>
-</head>
-
-<body>
-
-    <div class="container-master">
-        <div class="header">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="images/FreshKickz-logo.svg">
-                </a>
-            </div>
-            <div class="nav">
-                <form class="searchform">
-                    <input type="text" class="form-control" id="inputShoe" placeholder="Find you sneakers here...">
-                    <button type="submit"><i class="fa fa-search"></i></button>
-                </form>
-                <ul>
-                    <li><a href="login.html"><button class="btn log">Login</button></a></li>
-                    <li><a href="register.html"><button class="btn sign">Sign Up</button></a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="header-img">
-            <img src="images/sneaker-header.jpg">
-        </div>
-
-        <h2 id="welcomeMessage"></h2>
-
-        <div class="outer-container">
-            <h1>Releases</h1>
-
-            <div class="content-container">
-                <div class="container-one">
-                    <h2>Upcoming</h2>
+    <body>
+        <div class="container-master">
+            <div class="header">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/FreshKickz-logo.svg" />
+                    </a>
                 </div>
-                <div class="container-two">
-                    <h2>Out Now</h2>
+                <div class="nav">
+                    <form class="searchform">
+                        <input type="text" class="form-control" id="inputShoe" placeholder="Find you sneakers here..." />
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                    <ul>
+                        <li>
+                            <a href="login.html"><button class="btn log">Login</button></a>
+                        </li>
+                        <li>
+                            <a href="register.html"><button class="btn sign">Sign Up</button></a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
 
-        <!-- <button id="filter-button" class="button">Filter</button>
+            <div class="header-img">
+                <img src="images/sneaker-header.jpg" />
+            </div>
+
+            <h2 id="welcomeMessage"></h2>
+
+            <div class="outer-container">
+                <h1>Releases</h1>
+
+                <div class="content-container">
+                    <div class="container-one">
+                        <h2>Upcoming</h2>
+                    </div>
+                    <div class="container-two">
+                        <h2>Out Now</h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <button id="filter-button" class="button">Filter</button>
         <div id="filter-container" class="filters">
             <ul class="filters__list">
                 <li>
@@ -96,201 +98,11 @@
             </ul>
         </div> -->
 
-        <button id="filter-button" class="btn log">Filter</button>
+            <button id="filter-button" class="btn log">Filter</button>
 
-        <h2>Upcoming Releases</h2>
+            <h2>Upcoming Releases</h2>
 
-        <div class="outer-wrapper">
-
-            <div class="wrapper">
-                <div onclick="location.href='/docs/shoepage.html';" class="shoe-tile" style="cursor: pointer;">
-                    <!-- <div id="releaseDate" class="release-date">2020-03-21</div> -->
-                    <time datetime="2014-09-20" class="icon">
-                        <strong>SEP</strong>
-                        <span>20</span>
-                    </time>
-                    <img id="shoe-img" src="/docs/images/2-air-force-1-low-colour-of-the-moth.png" alt="...">
-                </div>
-                <div class="shoe-col">
-                    <div class="shoe-body">
-
-
-                        <!--Like Button -->
-                        <button class="like-button" x-data="{
-        state: 'Unliked',
-        usedKeyboard: false,
-        async updateState(to) {
-            this.state = 'Saving'
-            await new Promise(resolve => setTimeout(resolve, 1000))
-            this.state = to
-        }
-      }" :class="{
-        'like unliked': state === 'Unliked',
-        'like saving': state === 'Saving',
-        'like liked': state === 'Liked',
-        'focus:outline-none': !usedKeyboard
-      }" @click="updateState(state === 'Unliked' ? 'Liked' : 'Unliked')" @keydown.window.tab="usedKeyboard = true">
-                            <span class="like-icon like-icon-state" aria-label="state" x-text="state"
-                                aria-live="polite">Unliked</span>
-                        </button>
-
-                        <h3 id="shoeName" class="shoe-name">Air Force 1 Low 'Colour of the Month'</h3>
-
-                    </div>
-                </div>
-
-            </div>
-
-
-            <!--Unhide code below to see what the actual idea is when I get the API working -->
-            <!-- <div class="wrapper">
-                <div onclick="location.href='/docs/shoepage.html';" class="shoe-tile" style="cursor: pointer;">
-                    <time datetime="2014-09-20" class="icon">
-                        <strong>SEP</strong>
-                        <span>20</span>
-                    </time>
-                    <img id="shoe-img" src="/docs/images/2-air-force-1-low-colour-of-the-moth.png" alt="...">
-                </div>
-                <div class="shoe-col">
-                    <div class="shoe-body">
-
-
-                        <button class="like-button" x-data="{
-        state: 'Unliked',
-        usedKeyboard: false,
-        async updateState(to) {
-            this.state = 'Saving'
-            await new Promise(resolve => setTimeout(resolve, 1000))
-            this.state = to
-        }
-      }" :class="{
-        'like unliked': state === 'Unliked',
-        'like saving': state === 'Saving',
-        'like liked': state === 'Liked',
-        'focus:outline-none': !usedKeyboard
-      }" @click="updateState(state === 'Unliked' ? 'Liked' : 'Unliked')" @keydown.window.tab="usedKeyboard = true">
-                            <span class="like-icon like-icon-state" aria-label="state" x-text="state"
-                                aria-live="polite">Unliked</span>
-                        </button>
-
-                        <h3 id="shoeName" class="shoe-name">Air Force 1 Low 'Colour of the Month'</h3>
-
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="wrapper">
-                <div onclick="location.href='/docs/shoepage.html';" class="shoe-tile" style="cursor: pointer;">
-                    <time datetime="2014-09-20" class="icon">
-                        <strong>SEP</strong>
-                        <span>20</span>
-                    </time>
-                    <img id="shoe-img" src="/docs/images/2-air-force-1-low-colour-of-the-moth.png" alt="...">
-                </div>
-                <div class="shoe-col">
-                    <div class="shoe-body">
-
-
-                        <button class="like-button" x-data="{
-        state: 'Unliked',
-        usedKeyboard: false,
-        async updateState(to) {
-            this.state = 'Saving'
-            await new Promise(resolve => setTimeout(resolve, 1000))
-            this.state = to
-        }
-      }" :class="{
-        'like unliked': state === 'Unliked',
-        'like saving': state === 'Saving',
-        'like liked': state === 'Liked',
-        'focus:outline-none': !usedKeyboard
-      }" @click="updateState(state === 'Unliked' ? 'Liked' : 'Unliked')" @keydown.window.tab="usedKeyboard = true">
-                            <span class="like-icon like-icon-state" aria-label="state" x-text="state"
-                                aria-live="polite">Unliked</span>
-                        </button>
-
-                        <h3 id="shoeName" class="shoe-name">Air Force 1 Low 'Colour of the Month'</h3>
-
-                    </div>
-                </div>
-
-            </div>
-            <div class="wrapper">
-                <div onclick="location.href='/docs/shoepage.html';" class="shoe-tile" style="cursor: pointer;">
-                    <time datetime="2014-09-20" class="icon">
-                        <strong>SEP</strong>
-                        <span>20</span>
-                    </time>
-                    <img id="shoe-img" src="/docs/images/2-air-force-1-low-colour-of-the-moth.png" alt="...">
-                </div>
-                <div class="shoe-col">
-                    <div class="shoe-body">
-
-                        <button class="like-button" x-data="{
-        state: 'Unliked',
-        usedKeyboard: false,
-        async updateState(to) {
-            this.state = 'Saving'
-            await new Promise(resolve => setTimeout(resolve, 1000))
-            this.state = to
-        }
-      }" :class="{
-        'like unliked': state === 'Unliked',
-        'like saving': state === 'Saving',
-        'like liked': state === 'Liked',
-        'focus:outline-none': !usedKeyboard
-      }" @click="updateState(state === 'Unliked' ? 'Liked' : 'Unliked')" @keydown.window.tab="usedKeyboard = true">
-                            <span class="like-icon like-icon-state" aria-label="state" x-text="state"
-                                aria-live="polite">Unliked</span>
-                        </button>
-
-                        <h3 id="shoeName" class="shoe-name">Air Force 1 Low 'Colour of the Month'</h3>
-
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="wrapper">
-                <div onclick="location.href='/docs/shoepage.html';" class="shoe-tile" style="cursor: pointer;">
-                    <time datetime="2014-09-20" class="icon">
-                        <strong>SEP</strong>
-                        <span>20</span>
-                    </time>
-                    <img id="shoe-img" src="/docs/images/2-air-force-1-low-colour-of-the-moth.png" alt="...">
-                </div>
-                <div class="shoe-col">
-                    <div class="shoe-body">
-
-                        <button class="like-button" x-data="{
-        state: 'Unliked',
-        usedKeyboard: false,
-        async updateState(to) {
-            this.state = 'Saving'
-            await new Promise(resolve => setTimeout(resolve, 1000))
-            this.state = to
-        }
-      }" :class="{
-        'like unliked': state === 'Unliked',
-        'like saving': state === 'Saving',
-        'like liked': state === 'Liked',
-        'focus:outline-none': !usedKeyboard
-      }" @click="updateState(state === 'Unliked' ? 'Liked' : 'Unliked')" @keydown.window.tab="usedKeyboard = true">
-                            <span class="like-icon like-icon-state" aria-label="state" x-text="state"
-                                aria-live="polite">Unliked</span>
-                        </button>
-
-                        <h3 id="shoeName" class="shoe-name">Air Force 1 Low 'Colour of the Month'</h3>
-
-                    </div>
-                </div>
-
-            </div> -->
-
+            <div class="outer-wrapper" id="outer-wrapper"></div>
         </div>
-    </div>
-
-</body>
-
+    </body>
 </html>

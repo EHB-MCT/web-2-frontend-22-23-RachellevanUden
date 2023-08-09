@@ -1,19 +1,70 @@
-//Uncaught ReferenceError: require is not defined at main.js:3:19
+'use strict';
 
-/* const SneaksAPI = require('sneaks-api');
-const sneaks = new SneaksAPI();
+window.onload = () => {
+    initUpcomingReleases();
+};
 
-//getProducts(keyword, limit, callback) takes in a keyword and limit and returns a product array 
-sneaks.getProducts("Yeezy Cinder", 10, function (err, products) {
-    console.log(products)
-})
+function convertToMonth(date) {
+    // Array of month names
+    const monthNames = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
 
-//Product object includes styleID where you input it in the getProductPrices function
-//getProductPrices(styleID, callback) takes in a style ID and returns sneaker info including a price map and more images of the product
-sneaks.getProductPrices("FY2903", function (err, product) {
-    console.log(product)
-})
-//getMostPopular(limit, callback) takes in a limit and returns an array of the current popular products curated by StockX
-sneaks.getMostPopular(10, function (err, products) {
-    console.log(products)
-}) */
+    return monthNames[date.getMonth()];
+}
+
+async function initUpcomingReleases() {
+    // Get outerwrapper dom
+    const outerWrapper = document.querySelector('#outer-wrapper');
+
+    // Fetch from backend, sneaksapi requires "require" which is not supported in browser
+    const req = await fetch('http://localhost:3000/popular-sneakers', { method: 'GET' });
+    const sneakers = await req.json();
+    console.log(sneakers);
+
+    // Create a new div element containing the upcoming release shoe html
+    let upcomingReleasesHTML = ``;
+
+    sneakers.forEach((sneaker) => {
+        const htmlString = `<div class="wrapper">
+        <div onclick="location.href='/docs/shoepage.html';" class="shoe-tile" style="cursor: pointer">
+            <div id="releaseDate" class="release-date">${sneaker.releaseDate}</div> 
+            <time datetime="2014-09-20" class="icon">
+                <strong>${convertToMonth(new Date(sneaker.releaseDate))}</strong>
+                <span>${new Date(sneaker.releaseDate).getDay()}</span>
+            </time>
+            <img id="shoe-img" src="${sneaker.thumbnail}" alt="..." />
+        </div>
+        <div class="shoe-col">
+            <div class="shoe-body">
+                <!--Like Button -->
+                <button
+                    class="like-button"
+                    x-data="{
+    state: 'Unliked',
+    usedKeyboard: false,
+    async updateState(to) {
+    this.state = 'Saving'
+    await new Promise(resolve => setTimeout(resolve, 1000))
+    this.state = to
+    }
+    }"
+                    :class="{
+    'like unliked': state === 'Unliked',
+    'like saving': state === 'Saving',
+    'like liked': state === 'Liked',
+    'focus:outline-none': !usedKeyboard
+    }"
+                    @click="updateState(state === 'Unliked' ? 'Liked' : 'Unliked')"
+                    @keydown.window.tab="usedKeyboard = true"
+                >
+                    <span class="like-icon like-icon-state" aria-label="state" x-text="state" aria-live="polite">Unliked</span>
+                </button>
+    
+                <h3 id="shoeName" class="shoe-name">${sneaker.shoeName}</h3>
+            </div>
+        </div></div>`;
+        upcomingReleasesHTML += htmlString;
+    });
+
+    // Insert the upcoming release shoe html into the outerwrapper
+    outerWrapper.innerHTML = upcomingReleasesHTML;
+}
