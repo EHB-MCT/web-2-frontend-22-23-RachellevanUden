@@ -10,44 +10,49 @@
     <title>Fresh Kickz</title>
 </head>
 
-<body>
+<body class="page-loginSystem">
 
-    <div class="container-master">
-        <div class="header">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="images/FreshKickz-logo.svg">
-                </a>
+    <div class="container-superMaster">
+        <div class="container-master">
+            <div class="header">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/FreshKickz-logo.svg">
+                    </a>
+                </div>
+            </div>
+
+            <div class="loginSystem">
+                <h1>Register page</h1>
+
+            <div class="button-container">
+                <a href="login.html"><button class="btn log">Login </button></a>
+                <a href="index.html"><button class="btn sign">Back to home</button></a>
+            </div>
+                <hr>
+                <form id="registerForm">
+                    <div class="mb-3">
+                        <label for="inputUsername" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="inputUsername">
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputEmail" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="inputEmail">
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputPassword" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="inputPassword">
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputPassword2" class="form-label">Repeat password</label>
+                        <input type="password" class="form-control" id="inputPassword2">
+                    </div>
+                    <button type="submit" class="btn log">Submit</button>
+                </form>
             </div>
         </div>
+    </div>
 
-        <div class="loginSystem">
-            <h1>Register page</h1>
-
-            <a href="login.html"><button class="btn log">Login </button></a>
-            <a href="index.html"><button class="btn sign">Back to home</button></a>
-
-            <hr>
-            <form id="registerForm">
-                <div class="mb-3">
-                    <label for="inputUsername" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="inputUsername">
-                </div>
-                <div class="mb-3">
-                    <label for="inputEmail" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="inputEmail">
-                </div>
-                <div class="mb-3">
-                    <label for="inputPassword" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="inputPassword">
-                </div>
-                <div class="mb-3">
-                    <label for="inputPassword2" class="form-label">Repeat password</label>
-                    <input type="password" class="form-control" id="inputPassword2">
-                </div>
-                <button type="submit" class="btn log">Submit</button>
-            </form>
-        </div>
 </body>
 
 </html>

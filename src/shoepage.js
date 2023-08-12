@@ -37,19 +37,19 @@ async function initProductDetails(sneakerId) {
                         <h3>Productdetails</h3>
                     </li>
                     <li>
-                        <h4>${sneaker.shoeName}</h4>
+                        <h4>Shoe Name: ${sneaker.shoeName}</h4>
                     </li>
                     <li>
-                        <h4>${sneaker.brand}</h4>
+                        <h4>Brand: ${sneaker.brand}</h4>
                     </li>
                     <li>
-                        <h4>${sneaker.description}</h4>
+                        <h4>Description: ${sneaker.description}</h4>
                     </li>
                     <li>
-                        <h4>${sneaker.releaseDate}</h4>
+                        <h4>Release Date: ${sneaker.releaseDate}</h4>
                     </li>
                     <li>
-                        <h4>${sneaker.retailPrice}</h4>
+                        <h4>Retail Price: ${sneaker.retailPrice}</h4>
                     </li>
                 </ul>
             </div>
