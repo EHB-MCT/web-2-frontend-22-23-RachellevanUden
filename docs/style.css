@@ -133,7 +133,7 @@ h2 {
     font-size: 1.5em;
 }
 
-.outer-container {
+.outer-container, .outer-container2 {
     margin-top: 80px;
     justify-content: center;
     text-align: center;
@@ -528,6 +528,7 @@ time.icon span {
     text-align: left;
     padding-top: 5%;
 }
+
 
 /* Bootstrap form */
 .mb-3 {
