@@ -11,6 +11,10 @@ function convertToMonth(date) {
     return monthNames[date.getMonth()];
 }
 
+function navigateToShoePage(id) {
+    window.location.href = `/docs/shoepage.html?id=${id}`;
+}
+
 async function initUpcomingReleases() {
     // Get outerwrapper dom
     const outerWrapper = document.querySelector('#outer-wrapper');
@@ -23,10 +27,10 @@ async function initUpcomingReleases() {
     // Create a new div element containing the upcoming release shoe html
     let upcomingReleasesHTML = ``;
 
-    sneakers.forEach((sneaker) => {
+    sneakers.forEach((sneaker, index) => {
         const htmlString = `
         <div class="wrapper">
-            <div onclick="navigateToShoePage('${sneaker._id}');" class="shoe-tile" style="cursor: pointer">
+        <div onclick="navigateToShoePage(${sneaker.goatProductId})" class="shoe-tile" style="cursor: pointer">         
 
                 <time datetime="${sneaker.releaseDate}" class="icon">
                     <strong>${convertToMonth(new Date(sneaker.releaseDate))}</strong>
@@ -87,3 +91,12 @@ closeFilterButton.addEventListener('click', () => {
     filterContainer.classList.remove('show-filters');
     applyFilterButton.style.display = 'none';
 });
+
+for (let i = 0; i < sneaker.length; i++) {
+    console.log(sneaker[i]);
+    sneaker[i].addEventListener("click", function() {
+      console.log(sneaker[i]);
+      console.log(i);
+    });
+  }
+  
