@@ -25,8 +25,8 @@
                 </div>
                 <div class="nav">
                     <form class="searchform">
-                        <input type="text" class="form-control" id="inputShoe" placeholder="Find you sneakers here..." />
-                        <button type="submit"><i class="fa fa-search"></i></button>
+                        <input type="text" class="form-control" id="inputItem" placeholder="Find your item here..." />
+                        <button type="submit" id="searchButton"></button>
                     </form>
                     <ul>
                         <li>
@@ -56,49 +56,50 @@
                 </div>
             </div>
 
-            <!-- <button id="filter-button" class="button">Filter</button>
-        <div id="filter-container" class="filters">
-            <ul class="filters__list">
-                <li>
-                    <input id="f1" type="checkbox" />
-                    <label for="f1">Air Jordan</label>
-                </li>
-                <li>
-                    <input id="f2" type="checkbox" />
-                    <label for="f2">Asics</label>
-                </li>
-                <li>
-                    <input id="f3" type="checkbox" />
-                    <label for="f3">Converse</label>
-                </li>
-                <li>
-                    <input id="f4" type="checkbox" />
-                    <label for="f4">New Balance</label>
-                </li>
-                <li>
-                    <input id="f5" type="checkbox" />
-                    <label for="f5">Nike</label>
-                </li>
-                <li>
-                    <input id="f6" type="checkbox" />
-                    <label for="f6">Off-White</label>
-                </li>
-                <li>
-                    <input id="f7" type="checkbox" />
-                    <label for="f7">Puma</label>
-                </li>
-                <li>
-                    <input id="f8" type="checkbox" />
-                    <label for="f8">Reebok</label>
-                </li>
-                <li>
-                    <input id="f9" type="checkbox" />
-                    <label for="f9">Vans</label>
-                </li>
-            </ul>
-        </div> -->
-
             <button id="filter-button" class="btn log">Filter</button>
+                 <div id="filter-container" class="filters">
+                    <button id="close-filter-button" class="btn log">x</button>
+                    <ul class="filters__list">
+                        <li>
+                            <input id="filter-air-jordan" type="checkbox" />
+                            <label for="filter-air-jordan">Air Jordan</label>
+                        </li>
+                        <li>
+                            <input id="filter-asics" type="checkbox" />
+                            <label for="filter-asics">Asics</label>
+                        </li>
+                        <li>
+                            <input id="filter-converse" type="checkbox" />
+                            <label for="filter-converse">Converse</label>
+                        </li>
+                        <li>
+                            <input id="filter-new-balance" type="checkbox" />
+                            <label for="filter-new-balance">New Balance</label>
+                        </li>
+                        <li>
+                            <input id="filter-nike" type="checkbox" />
+                            <label for="filter-nike">Nike</label>
+                        </li>
+                        <li>
+                            <input id="filter-off-white" type="checkbox" />
+                            <label for="filter-off-white">Off-White</label>
+                        </li>
+                        <li>
+                            <input id="filter-puma" type="checkbox" />
+                            <label for="filter-puma">Puma</label>
+                        </li>
+                        <li>
+                            <input id="filter-reebok" type="checkbox" />
+                            <label for="filter-reebok">Reebok</label>
+                        </li>
+                        <li>
+                            <input id="filter-vans" type="checkbox" />
+                            <label for="filter-vans">Vans</label>
+                        </li>
+                    </ul>
+                
+                <button id="apply-filter-button" class="btn log">></button>
+            </div>
 
             <h2></h2>
 

@@ -1,7 +1,7 @@
 'use strict';
 
 window.onload = () => {
-    initUpcomingReleases();
+    initUpcomingReleases(); 
 };
 
 function convertToMonth(date) {
@@ -69,3 +69,21 @@ async function initUpcomingReleases() {
     // Insert the upcoming release shoe html into the outerwrapper
     outerWrapper.innerHTML = upcomingReleasesHTML;
 }
+
+//Filter button
+const filterButton = document.getElementById('filter-button');
+const closeFilterButton = document.getElementById('close-filter-button');
+const filterContainer = document.getElementById('filter-container');
+const applyFilterButton = document.getElementById('apply-filter-button');
+
+filterButton.addEventListener('click', () => {
+    //adds the 'show-filters' class to the filterContainer element
+    filterContainer.classList.add('show-filters');
+    applyFilterButton.style.display = 'inline-block';
+});
+
+closeFilterButton.addEventListener('click', () => {
+    //removes the 'show-filters' class from the filterContainer element
+    filterContainer.classList.remove('show-filters');
+    applyFilterButton.style.display = 'none';
+});

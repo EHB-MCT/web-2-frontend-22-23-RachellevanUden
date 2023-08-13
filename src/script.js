@@ -1,4 +1,4 @@
-/* Code for animated like button by David Kerns */
+/* Code for animated like button by David Kerns, see readme for link */
 
 ! function (e, t) {
     "object" == typeof exports && "undefined" != typeof module ? module.exports = t() : "function" == typeof define && define.amd ? define(t) : (e = e || self).Alpine = t()
@@ -1133,3 +1133,4 @@
     })) : window.Alpine.start()), ge
 }));
 //# sourceMappingURL=/sm/44afe343e2d1648d1350ab98ed40031d7c91d6246d1aa6dadb2f143c24a5612c.map
+

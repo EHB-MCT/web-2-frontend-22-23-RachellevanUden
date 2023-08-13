@@ -17,7 +17,7 @@ async function initProductDetails(sneakerId) {
     const req = await fetch(`http://localhost:3000/sneaker/id?id=${sneakerId}`, { method: 'GET' });
     const sneakers = await req.json();
     console.log('sneaker:', sneakers); // Log the fetched sneaker data
-    const sneaker = sneakers[0]; // Access the first sneaker in the array
+    const sneaker = sneakers[0]; // Access the first sneaker in the array, needs to be dynamic !!!!!!
     console.log(sneaker);
 
     // Create a new div element containing the product details HTML
