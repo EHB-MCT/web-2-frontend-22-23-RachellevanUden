@@ -20,7 +20,7 @@ async function initUpcomingReleases() {
     const outerWrapper = document.querySelector('#outer-wrapper');
 
     // Fetch from backend, sneaksapi requires "require" which is not supported in browser
-    const req = await fetch('http://localhost:3000/popular-sneakers', { method: 'GET' });
+    const req = await fetch('http://localhost:3000/populair-sneakers', { method: 'GET' });
     const sneakers = await req.json();
     console.log(sneakers);
 
@@ -91,12 +91,3 @@ closeFilterButton.addEventListener('click', () => {
     filterContainer.classList.remove('show-filters');
     applyFilterButton.style.display = 'none';
 });
-
-for (let i = 0; i < sneaker.length; i++) {
-    console.log(sneaker[i]);
-    sneaker[i].addEventListener("click", function() {
-      console.log(sneaker[i]);
-      console.log(i);
-    });
-  }
-  

@@ -21,4 +21,3 @@ async function getData(url, method, data) {
     });
     return await resp.json();
 }
-//test
