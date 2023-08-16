@@ -20,7 +20,7 @@ async function initUpcomingReleases() {
     const outerWrapper = document.querySelector('#outer-wrapper');
 
     // Fetch from backend, sneaksapi requires "require" which is not supported in browser
-    const req = await fetch('http://localhost:3000/populair-sneakers', { method: 'GET' });
+    const req = await fetch('https://web-2-backend-fresh-kickz.onrender.com/populair-sneakers', { method: 'GET' });
     const sneakers = await req.json();
     console.log(sneakers);
 

@@ -25,7 +25,7 @@ async function initProductDetails(sneakerId) {
     const outerContainer = document.querySelector('.outer-container2'); // Use class selector
     console.log(outerContainer); // Log the fetched sneaker data
     // Fetch data for the specific sneaker using the id
-    const req = await fetch(`http://localhost:3000/sneaker/id?id=${sneakerId}`, { method: 'GET' });
+    const req = await fetch(`https://web-2-backend-fresh-kickz.onrender.com/sneaker/id?id=${sneakerId}`, { method: 'GET' });
     const sneaker = await req.json();
     
 
